@@ -8,12 +8,12 @@ jobs:
       matrix:
         runner: [ubuntu-latest, windows-latest]
         python-version: [3.11, 3.12, 3.13]
-        include:
+      include:
          - runner: macos-latest
-           python-version: 3.12
-       exclude:
-         - runner: windows-latest
-           python-version: 3.13
+          python-version: 3.12
+      exclude:
+        - runner: windows-latest
+         python-version: 3.13
     runs-on: ${{matrix.runner}} 
     steps:
-     - run: echo this job will rin in python version ${{matrix.python-version}}
+     - run: echo this job will run in python version ${{matrix.python-version}}
