@@ -1,8 +1,6 @@
 name: matrix
-
 on:
   push:
-
 jobs:
   matrix-job:
     name: matrix job
@@ -16,6 +14,6 @@ jobs:
        exclude:
          - runner: windows-latest
            python-version: 3.13
-    run-on: ${{matrix.runner}} 
+    runs-on: ${{matrix.runner}} 
     step:
       - run: echo this job will rin in python version ${{matrix.python-version}}
