@@ -1,0 +1,21 @@
+name: matrix
+
+on:
+  push:
+
+jobs:
+  matrix-job:
+    name: matrix job
+    strategy: 
+      matrix:
+        runner: [ubuntu-latest, windows-latest]
+        python-version: [3.11, 3.12, 3.13]
+        include:
+         - runner:macos-latest
+           pythob-version 3.12
+       exclude:
+         - runner: windows-latest
+           python-version: 3.13
+    run-on: ${{matrix.runner}} 
+    step:
+      - run: echo this job will rin in python version ${{matrix.python-version}}
