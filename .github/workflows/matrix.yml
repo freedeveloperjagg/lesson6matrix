@@ -11,8 +11,8 @@ jobs:
         runner: [ubuntu-latest, windows-latest]
         python-version: [3.11, 3.12, 3.13]
         include:
-         - runner:macos-latest
-           pythob-version 3.12
+         - runner: macos-latest
+           python-version: 3.12
        exclude:
          - runner: windows-latest
            python-version: 3.13
